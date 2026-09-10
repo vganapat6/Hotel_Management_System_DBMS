@@ -108,7 +108,7 @@ The main relationships are:
 - One booking can have zero or one check-in/check-out record.
 
 
-## Team 15
+## Team 
 
 - **Ganapathiraju Venkata Atchutha Ramaraju**
 - **Ganta Yasaswini**
