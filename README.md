@@ -1,237 +1,115 @@
-🏨 Hotel Management System
+# Hotel Management System
 
-A MySQL-based DBMS project for managing hotel operations — from customer registration to booking, payment, and check-out.
+## Project Overview
 
-<p align="center">
+The Hotel Management System is a DBMS project developed using MySQL.
 
+It is designed to manage important hotel operations such as customer details, room inventory, bookings, payments, and check-in/check-out records.
 
+The system provides a centralized and organized database for hotel administrators and receptionists.
 
 
+## Technologies Used
 
+- MySQL
+- SQL
+- Database Management Systems (DBMS)
 
-</p>
 
-✨ About the Project
+## Database Tables
 
-The Hotel Management System is a relational database project developed using MySQL.
+The project contains six main relational tables:
 
-It provides a structured way to manage:
+- **Customers** – Stores customer details such as name, contact information, address, date of birth, and ID proof.
 
-👤 Customer information
+- **Room_Types** – Stores room categories, bed type, maximum occupancy, AC status, area, and base price.
 
-🛏️ Room types and rooms
+- **Rooms** – Stores physical room details such as room number, floor, status, room type, and price per night.
 
-📅 Hotel bookings
+- **Bookings** – Stores customer bookings, stay dates, guest count, booking status, and total amount.
 
-💳 Payments
+- **Payments** – Stores payment details including amount, payment method, transaction reference, and payment status.
 
-🏨 Check-in and check-out details
+- **Check_In_Out** – Stores arrival and departure information, actual check-in/check-out time, room condition, and status.
 
-The main idea is to keep all hotel information organized in one database and make common hotel operations easier to manage.
 
-🧩 Database Structure
+## Main Features
 
-The system contains 6 main tables:
+- Customer management
+- Room type and room inventory management
+- Hotel booking management
+- Payment management
+- Check-in and check-out tracking
+- Automatic booking cost calculation
+- SQL triggers
+- Primary and foreign keys
+- Referential integrity
+- 1NF, 2NF and 3NF normalization
+- CRUD operations
+- SQL joins and aggregate functions
+- Subqueries and HAVING clause
+- Views and stored procedures
+- User-defined functions
+- ACID transactions
+- B-Tree indexes
 
-#
 
-Table
+## Basic System Flow
 
-Purpose
+**Customer → Room Type → Room → Booking → Payment → Check-In/Out**
 
-01
 
-Customers
+## How to Run the Project
 
-Stores customer details
+1. Install and open MySQL Workbench.
+2. Open the `hotel_management.sql` file.
+3. Execute the SQL script.
+4. The database and required tables will be created.
+5. Run the required SQL queries to view and manage the data.
 
-02
 
-Room_Types
+## Automated Triggers
 
-Stores different room categories
+### 1. Booking Tariff Calculation
 
-03
+The `before_booking_insert` trigger automatically calculates the total booking amount using:
 
-Rooms
+**Number of nights × Price per night**
 
-Stores physical room information
+The project also includes a `before_booking_update` trigger that recalculates the booking amount when the booking dates or room are updated.
 
-04
 
-Bookings
+### 2. Payment Confirmation
 
-Stores reservation details
+The `after_payment_insert` trigger updates the booking status to **Confirmed** when a completed payment is recorded.
 
-05
 
-Payments
+## Reports
 
-Stores payment transactions
+The system can generate reports such as:
 
-06
+- Revenue by payment mode
+- Room category occupancy
+- Current in-house guests
+- Customer booking information
+- Room and booking details
 
-Check_In_Out
 
-Stores arrival and departure details
+## ER Diagram
 
-🔗 System Flow
+The ER model contains six core entities connected through relationships between customers, room types, rooms, bookings, payments, and check-in/check-out records.
 
-👤 Customer
-     ↓
-🛏️ Room Type
-     ↓
-🚪 Room
-     ↓
-📅 Booking
-     ↓
-💳 Payment
-     ↓
-🏨 Check-In / Check-Out
+The main relationships are:
 
-🚀 Key Features
+- One customer can have multiple bookings.
+- One room type can have multiple rooms.
+- One room can be associated with multiple bookings over time.
+- One booking can have multiple payments.
+- One booking can have zero or one check-in/check-out record.
 
-👤 Customer Management
 
-Store and manage customer information such as name, contact details, address and ID proof.
+## Team 15
 
-🛏️ Room Management
-
-Maintain room types, room numbers, room status, pricing and other room information.
-
-📅 Booking Management
-
-Manage check-in/check-out dates, guest count, booking status and total booking amount.
-
-💳 Payment Management
-
-Record payment amount, payment method, transaction reference and payment status.
-
-⚡ Automatic Booking Calculation
-
-The database can automatically calculate the booking amount based on:
-
-Number of Nights × Price Per Night
-
-🔄 CRUD Operations
-
-Supports the basic database operations:
-
-Create → Read → Update → Delete
-
-🔗 SQL Queries
-
-Includes:
-
-INNER JOIN
-
-LEFT JOIN
-
-Aggregate Functions
-
-Subqueries
-
-HAVING clause
-
-🧠 Database Concepts
-
-The project demonstrates:
-
-Primary Keys
-
-Foreign Keys
-
-Referential Integrity
-
-Normalization
-
-SQL Constraints
-
-Triggers
-
-ACID Transactions
-
-⚙️ Technologies
-
-Technology
-
-Usage
-
-🐬 MySQL
-
-Database
-
-🧾 SQL
-
-Queries and database operations
-
-🗄️ DBMS Concepts
-
-Database design and management
-
-📂 Project Files
-
-Hotel-Management-System/
-│
-├── 📄 README.md
-├── 🗃️ hotel_management.sql
-├── 🖼️ ER_Diagram.png
-└── 📊 Hotel_Management_System.pptx
-
-Add the SQL file, ER diagram and presentation to this repository to keep the complete project together.
-
-▶️ How to Run
-
-1️⃣ Open MySQL Workbench
-
-Open MySQL Workbench on your computer.
-
-2️⃣ Open the SQL file
-
-Open:
-
-hotel_management.sql
-
-3️⃣ Execute the script
-
-Run the SQL script to create the database and required tables.
-
-4️⃣ Test the database
-
-Run your SELECT, JOIN, INSERT, UPDATE and other queries to test the system.
-
-📊 Example Query
-
-To display all records from a table:
-
-SELECT * FROM customers;
-
-You can use the same format for the other tables:
-
-SELECT * FROM room_types;
-SELECT * FROM rooms;
-SELECT * FROM bookings;
-SELECT * FROM payments;
-SELECT * FROM check_in_out;
-
-👨‍💻 Team 15
-
-Team Member
-
-Ganapathiraju Venkata Atchutha Ramaraju
-
-Ganta Yasaswini
-
-Boyina Kundana Venkata Sai
-
-🎓 Project
-
-DBMS Laboratory Project
-
-🏨 Hotel Management System
-
-Organized data. Easier management. Better hotel operations.
-
-<p align="center">
-  ⭐ If you find this project useful, consider giving the repository a star!
-</p>
+- **Ganapathiraju Venkata Atchutha Ramaraju**
+- **Ganta Yasaswini**
+- **Boyina Kundana Venkata Sai**
